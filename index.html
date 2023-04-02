@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Expense_Tracker</title>
+  </head>
+  <body>
+    <h1>Simple expense manager project</h1>
+    <h2>Add a new item:</h2>
+
+    <div class="choices">
+      <text>Type:</text>
+      <select name="" id="currencyType">
+        <option value="Card"></option>
+        <option value="Cash"></option>
+        <option value="Crypto"></option>
+        <option value="Other"></option>
+      </select>
+      <text>Name:</text>
+      <input type="text" placeholder="What did you spend it on?" />
+    </div>
+
+    <div class="choices">
+      <text>Date:</text>
+      <input type="date" />
+      <text>Amount:</text>
+      <input type="text" placeholder="How much?" />
+    </div>
+
+    <button class="button">Add a new expense</button>
+
+    <table border="1">
+      <tr>
+        <td>type</td>
+        <td>name</td>
+        <td>date</td>
+        <td>amount</td>
+      </tr>
+      <tr id="tablePlaceholder">
+        Your added items will show up here!
+      </tr>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
