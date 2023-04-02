@@ -18,10 +18,10 @@
     <div class="choices">
       <text>Type:</text>
       <select name="" id="currencyType">
-        <option value="Card"></option>
-        <option value="Cash"></option>
-        <option value="Crypto"></option>
-        <option value="Other"></option>
+        <option value="Card">Card</option>
+        <option value="Cash">Cash</option>
+        <option value="Crypto">Crypto</option>
+        <option value="Other">Other</option>
       </select>
       <text>Name:</text>
       <input type="text" placeholder="What did you spend it on?" />
@@ -36,17 +36,21 @@
 
     <button class="button">Add a new expense</button>
 
-    <table border="1" class="table">
-      <tr>
-        <td>type</td>
-        <td>name</td>
-        <td>date</td>
-        <td>amount</td>
-      </tr>
-      <tr id="tablePlaceholder">
-        <td>Your added items will show up here!</td>
-      </tr>
-    </table>
+    <div class="table_Container">
+      <table border="1" class="table">
+        <tbody class="adjustCells">
+          <tr>
+            <td>type</td>
+            <td>name</td>
+            <td>date</td>
+            <td>amount</td>
+          </tr>
+        </tbody>
+        <caption id="tablePlaceholder" class="tablePlaceholder">
+          Your added items will show up here!
+        </caption>
+      </table>
+    </div>
 
     <script src="script.js"></script>
   </body>
