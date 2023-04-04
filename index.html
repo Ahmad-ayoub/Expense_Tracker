@@ -17,7 +17,7 @@
 
     <div class="choices">
       <text>Type:</text>
-      <select name="" id="currencyType">
+      <select name="" id="currencyType" class="selectTag">
         <option value="Card">Card</option>
         <option value="Cash">Cash</option>
         <option value="Crypto">Crypto</option>
@@ -29,7 +29,7 @@
 
     <div class="choices">
       <text>Date:</text>
-      <input type="date" />
+      <input type="date" class="selectDate" />
       <text>Amount:</text>
       <input type="text" placeholder="How much?" />
     </div>
@@ -40,15 +40,15 @@
       <table border="1" class="table">
         <tbody class="adjustCells">
           <tr>
-            <td>type</td>
-            <td>name</td>
-            <td>date</td>
-            <td>amount</td>
+            <td class="col-type">type</td>
+            <td class="col-name">name</td>
+            <td class="col-date">date</td>
+            <td class="col-amount">amount</td>
           </tr>
         </tbody>
-        <caption id="tablePlaceholder" class="tablePlaceholder">
-          Your added items will show up here!
-        </caption>
+        <tr id="tablePlaceholder" class="tablePlaceholder">
+          <td colspan="4">Your added items will show up here!</td>
+        </tr>
       </table>
     </div>
 

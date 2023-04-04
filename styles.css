@@ -23,6 +23,7 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
+  padding-top: 5%;
 }
 
 .choices {
@@ -44,11 +45,22 @@ td {
 }
 
 .tablePlaceholder {
-  padding-top: 10px;
-  caption-side: bottom;
+  text-align: center;
+  font-weight: bold;
 }
 
-.adjustCells {
-  display: flex;
-  justify-content: center;
+.col-type {
+  width: 5%;
+}
+
+.col-name {
+  width: 45%;
+}
+
+.selectTag {
+  margin-right: 5%;
+}
+
+.dateTag {
+  margin-right: 5%;
 }
