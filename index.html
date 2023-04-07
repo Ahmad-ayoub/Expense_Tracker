@@ -24,17 +24,19 @@
         <option value="Other">Other</option>
       </select>
       <text>Name:</text>
-      <input type="text" placeholder="What did you spend it on?" />
+      <input type="text" id="name" placeholder="What did you spend it on?" />
     </div>
 
     <div class="choices">
       <text>Date:</text>
-      <input type="date" class="selectDate" />
+      <input type="date" id="date" class="selectDate" />
       <text>Amount:</text>
-      <input type="text" placeholder="How much?" />
+      <input type="text" id="amount" placeholder="How much?" />
     </div>
 
-    <button class="button">Add a new expense</button>
+    <button class="button" onclick="calculateExpenses()">
+      Add a new expense
+    </button>
 
     <div class="table_Container">
       <table border="1" class="table">
@@ -46,6 +48,11 @@
             <td class="col-amount">amount</td>
           </tr>
         </tbody>
+        <tr id="expensesRow"></tr>
+        <!--<tr>
+          <td>hi</td>
+          <td>bye</td>
+        </tr>-->
         <tr id="tablePlaceholder" class="tablePlaceholder">
           <td colspan="4">Your added items will show up here!</td>
         </tr>
