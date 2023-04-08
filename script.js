@@ -38,13 +38,16 @@ function removePlaceholder(tablePlaceholder) {
   tablePlaceholder.remove();
 }
 
-function appendExpenses(
-  currencyTypeSelect,
-  nameSelect,
-  dateSelect,
-  amountSelect,
-  expensesRow
-) {
-  const createExpensesRow = document.createElement("td");
-  expensesRow.appendChild(createExpensesRow);
+function appendExpenses([currencyTypeSelect, nameSelect, dateSelect, amountSelect], expensesRow);
+{
+  const newRow = document.createElement("tr");
+
+  values.forEach(value => {
+    const newCell = document.createElement("td");
+    newCell.textContent = value;
+    newRow.appendChild(newCell);
+  });
+
+  expensesRow.appendChild(newRow);
 }
+
