@@ -34,9 +34,7 @@
       <input type="text" id="amount" placeholder="How much?" />
     </div>
 
-    <button class="button" onclick="calculateExpenses()">
-      Add a new expense
-    </button>
+    <button class="button" id="calculateExpenses">Add a new expense</button>
 
     <div class="table_Container">
       <table border="1" class="table">
@@ -48,11 +46,7 @@
             <td class="col-amount">amount</td>
           </tr>
         </tbody>
-        <tr id="expensesRow"></tr>
-        <!--<tr>
-          <td>hi</td>
-          <td>bye</td>
-        </tr>-->
+
         <tr id="tablePlaceholder" class="tablePlaceholder">
           <td colspan="4">Your added items will show up here!</td>
         </tr>
