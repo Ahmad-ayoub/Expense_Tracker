@@ -9,11 +9,14 @@ const currencyTypeSelect = document.getElementById("currencyType");
 const nameSelect = document.getElementById("name");
 const dateSelect = document.getElementById("date");
 const amountSelect = document.getElementById("amount");
-let tablePlaceholder = document.getElementById("tablePlaceholder");
+const tablePlaceholder = document.getElementById("tablePlaceholder");
 const getExpenses = document.getElementById("calculateExpenses");
+const deleteExpenses = document.getElementById("deleteExpenses");
 
 // The starter function that begins the whole process
 getExpenses.addEventListener("click", calculateExpenses);
+// This one deletes a single row of user inputed information
+deleteExpenses.addEventListener("click", deleteExpense);
 
 // the main function that contains the functions that need to move in line
 function calculateExpenses() {
@@ -21,7 +24,7 @@ function calculateExpenses() {
   removePlaceholder();
 }
 
-// extracts all the user information and uses dot notation and arguments so that they can be utilized as a parameter in future functions.
+// extracts all the user information using dot notation and arguments so that they can be utilized as a parameter in future functions.
 function extractExpenses() {
   const currencyTypeValue = currencyTypeSelect.value;
   const nameValue = nameSelect.value;
@@ -58,3 +61,15 @@ function appendExpenses(values) {
   const tbody = document.querySelector(".adjustCells");
   tbody.appendChild(newRow);
 }
+
+function deleteExpense() {
+  const tbody = document.querySelector(".adjustCells");
+  if (
+    tbody.lastElementChild &&
+    !tbody.lastElementChild.classList.contains("col-type")
+  ) {
+    tbody.removeChild(tbody.lastElementChild);
+  }
+}
+
+//debugger;
