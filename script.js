@@ -47,8 +47,10 @@ function removePlaceholder() {
   tablePlaceholder.remove();
 }
 
-/* adds in a new row and columns to the table div via simple JS methods in HTML with all the user information
-the forEach loop is used so that this function can be used contionusly to add as much information as needed.*/
+/* 
+adds in a new row and columns to the table div via simple JS methods in HTML with all the user information
+the forEach loop is used so that this function can be used contionusly to add as much information as needed.
+*/
 function appendExpenses(values) {
   let newRow = document.createElement("tr");
 
@@ -61,7 +63,9 @@ function appendExpenses(values) {
   const tbody = document.querySelector(".adjustCells");
   tbody.appendChild(newRow);
 }
-
+/*
+Deletes a single row with a click of a button
+*/
 function deleteExpense() {
   const tbody = document.querySelector(".adjustCells");
   if (
