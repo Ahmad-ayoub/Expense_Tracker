@@ -20,6 +20,7 @@ function calculateExpenses() {
   extractExpenses();
   removePlaceholder();
 }
+
 // extracts all the user information and uses dot notation and arguments so that they can be utilized as a parameter in future functions.
 function extractExpenses() {
   const currencyTypeValue = currencyTypeSelect.value;
@@ -29,6 +30,7 @@ function extractExpenses() {
   inputExpenses(currencyTypeValue, nameValue, dateValue, amountValue);
   appendExpenses([currencyTypeValue, nameValue, dateValue, amountValue]);
 }
+
 // adds in all the user information into the empty arrays above
 function inputExpenses(currencyTypeValue, nameValue, dateValue, amountValue) {
   typeArray.push(currencyTypeValue);
@@ -36,12 +38,14 @@ function inputExpenses(currencyTypeValue, nameValue, dateValue, amountValue) {
   dateArray.push(dateValue);
   amountArray.push(amountValue);
 }
+
 // removes the placeholder held to explain to the user where the information will go
 function removePlaceholder() {
   tablePlaceholder.remove();
 }
-// adds in a new row and columns to the table div via simple JS methods in HTML with all the user information
-// the forEach loop is used so that this function can be used contionusly to add as much information as needed.
+
+/* adds in a new row and columns to the table div via simple JS methods in HTML with all the user information
+the forEach loop is used so that this function can be used contionusly to add as much information as needed.*/
 function appendExpenses(values) {
   let newRow = document.createElement("tr");
 
