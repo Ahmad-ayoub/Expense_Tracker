@@ -3,21 +3,24 @@
 This is a simple Expense Tracker app that allows users to add and manage their expenses in a clear and organized manner.
 
 With an easy-to-use interface, users can input the type, name, date, and amount of an expense, and then add it to the table by clicking the "Add a new expense" button.
-If needed you can also delete a single row with the "Delete an Expense" button.
+Each row will also have it's own "delete" button so you can selectively delete any row you wish.
 The table displays all added expenses in a neat and structured format, making it convenient for users to keep track of their expenditures.
 
 You can access it [here](https://ahmad-ayoub.github.io/Expense_Tracker/)
 
-![newexpensetracer](https://user-images.githubusercontent.com/107888495/230802427-7fdf92dd-6626-408e-8ea5-d786105a341e.png)
+![ExpTrk](https://user-images.githubusercontent.com/107888495/231042563-ffe66bb2-f758-4b45-8aac-6f37401ee284.png)
 
 Once you add in all the informatino all you have to do is click the "Add a New Expense" button and the place holder will be removed and replaced with a new row that contains all the information the user placed as shown below.
 
-![newexpensetracker2](https://user-images.githubusercontent.com/107888495/230802464-068bf0d5-9136-4bf8-bde9-e5136b31e9d2.png)
+![ExpTrk2](https://user-images.githubusercontent.com/107888495/231042607-3ecf9b34-cea7-402c-95a2-d0279fcd9077.png)
 
 Any number of rows of information can be added as well. 
 
-If you wish to delete a single row just click the "Delete an Expense" button. Keep pressing it to delete other rows if need be.
-![newexpensetracker](https://user-images.githubusercontent.com/107888495/230802496-d8d4326a-19fb-435c-9837-bf141cb61c1c.png)
+![ExpTrk3](https://user-images.githubusercontent.com/107888495/231042720-231b5b99-7914-4f67-906e-a03425aa5060.png)
+
+If you wish to delete a single row just click the "Delete" button to remove any row you wish
+
+![ExpTrk4](https://user-images.githubusercontent.com/107888495/231042756-ed8b6452-01c8-4ba1-bef4-fbdd7c2c5983.png)
 
 This will be my fourth JavaScript Project as of now.
 
