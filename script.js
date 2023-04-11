@@ -12,6 +12,7 @@ const amountSelect = document.getElementById("amount");
 const tablePlaceholder = document.getElementById("tablePlaceholder");
 const getExpenses = document.getElementById("calculateExpenses");
 const deleteExpenses = document.getElementById("deleteExpenses");
+const dltbtn = document.createElement("button");
 
 // The starter function that begins the whole process
 getExpenses.addEventListener("click", calculateExpenses);
@@ -30,8 +31,15 @@ function extractExpenses() {
   const nameValue = nameSelect.value;
   const dateValue = dateSelect.value;
   const amountValue = amountSelect.value;
+  //const dltbtnValue = dltbtn.value;
   inputExpenses(currencyTypeValue, nameValue, dateValue, amountValue);
-  appendExpenses([currencyTypeValue, nameValue, dateValue, amountValue]);
+  appendExpenses([
+    currencyTypeValue,
+    nameValue,
+    dateValue,
+    amountValue,
+    //dltbtnValue,
+  ]);
 }
 
 // adds in all the user information into the empty arrays above
@@ -62,18 +70,20 @@ function appendExpenses(values) {
 
   const tbody = document.querySelector(".adjustCells");
   tbody.appendChild(newRow);
+  appendDltButton(newRow);
 }
 /*
-Deletes a single row with a click of a button
+Adds a delete button to each row on the far right to allow the user to selectively choose which row they want to delete
 */
-function deleteExpense() {
-  const tbody = document.querySelector(".adjustCells");
-  if (
-    tbody.lastElementChild &&
-    !tbody.lastElementChild.classList.contains("col-type")
-  ) {
-    tbody.removeChild(tbody.lastElementChild);
-  }
-}
+function appendDltButton(newRow) {
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
 
-//debugger;
+  deleteButton.addEventListener("click", () => {
+    newRow.remove();
+  });
+
+  const deleteButtonCell = document.createElement("td");
+  deleteButtonCell.appendChild(deleteButton);
+  newRow.appendChild(deleteButtonCell);
+}
