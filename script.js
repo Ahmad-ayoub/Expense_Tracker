@@ -1,53 +1,26 @@
-// A list of empty arrays to add the user data if needed for future functions or data collection
-let typeArray = [];
-let nameArray = [];
-let dateArray = [];
-let amountArray = [];
-
 // A list of global variables that will be used in the code to collect information from the HTML file
 const currencyTypeSelect = document.getElementById("currencyType");
 const nameSelect = document.getElementById("name");
 const dateSelect = document.getElementById("date");
 const amountSelect = document.getElementById("amount");
 const tablePlaceholder = document.getElementById("tablePlaceholder");
-const getExpenses = document.getElementById("calculateExpenses");
-const deleteExpenses = document.getElementById("deleteExpenses");
+const addExpenses = document.getElementById("addExpensesButton");
 const dltbtn = document.createElement("button");
+const tableBody = document.getElementById("tableBody");
 
 // The starter function that begins the whole process
-getExpenses.addEventListener("click", calculateExpenses);
-// This one deletes a single row of user inputed information
-deleteExpenses.addEventListener("click", deleteExpense);
+addExpenses.addEventListener("click", addExpensesButton);
 
 // the main function that contains the functions that need to move in line
-function calculateExpenses() {
-  extractExpenses();
+function addExpensesButton() {
+  const expense = {
+    type: currencyTypeSelect.value,
+    name: nameSelect.value,
+    date: dateSelect.value,
+    amount: amountSelect.value,
+  };
+  appendExpenses(expense);
   removePlaceholder();
-}
-
-// extracts all the user information using dot notation and arguments so that they can be utilized as a parameter in future functions.
-function extractExpenses() {
-  const currencyTypeValue = currencyTypeSelect.value;
-  const nameValue = nameSelect.value;
-  const dateValue = dateSelect.value;
-  const amountValue = amountSelect.value;
-  //const dltbtnValue = dltbtn.value;
-  inputExpenses(currencyTypeValue, nameValue, dateValue, amountValue);
-  appendExpenses([
-    currencyTypeValue,
-    nameValue,
-    dateValue,
-    amountValue,
-    //dltbtnValue,
-  ]);
-}
-
-// adds in all the user information into the empty arrays above
-function inputExpenses(currencyTypeValue, nameValue, dateValue, amountValue) {
-  typeArray.push(currencyTypeValue);
-  nameArray.push(nameValue);
-  dateArray.push(dateValue);
-  amountArray.push(amountValue);
 }
 
 // removes the placeholder held to explain to the user where the information will go
@@ -59,23 +32,31 @@ function removePlaceholder() {
 adds in a new row and columns to the table div via simple JS methods in HTML with all the user information
 the forEach loop is used so that this function can be used contionusly to add as much information as needed.
 */
-function appendExpenses(values) {
-  let newRow = document.createElement("tr");
+function appendExpenses(expense) {
+  const newExpenseRow = document.createElement("tr");
+  const expenseType = document.createElement("td");
+  const expenseName = document.createElement("td");
+  const expenseDate = document.createElement("td");
+  const expenseAmount = document.createElement("td");
 
-  values.forEach((value) => {
-    const newCell = document.createElement("td");
-    newCell.textContent = value;
-    newRow.appendChild(newCell);
-  });
+  expenseType.textContent = expense.type;
+  expenseName.textContent = expense.name;
+  expenseDate.textContent = expense.date;
+  expenseAmount.textContent = expense.amount;
 
-  const tbody = document.querySelector(".adjustCells");
-  tbody.appendChild(newRow);
-  appendDltButton(newRow);
+  newExpenseRow.appendChild(expenseType);
+  newExpenseRow.appendChild(expenseName);
+  newExpenseRow.appendChild(expenseDate);
+  newExpenseRow.appendChild(expenseAmount);
+
+  tableBody.appendChild(newExpenseRow);
+  appendDeleteBtn(newExpenseRow);
 }
 /*
 Adds a delete button to each row on the far right to allow the user to selectively choose which row they want to delete
 */
-function appendDltButton(newRow) {
+//debugger;
+function appendDeleteBtn(newRow) {
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
 
